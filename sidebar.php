@@ -1,9 +1,9 @@
 <?php
-/*
-** The template for displaying Single.
-**
-** @package Movatique
-*/
+/**
+ *	The template for displaying Sidebar.
+ *
+ *	@package ThemeIsle
+ */
 ?>
 <div class="sidebar">
 	<?php

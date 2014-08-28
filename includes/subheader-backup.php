@@ -1,6 +1,6 @@
 <section id="subheader" class="cf">
 	<div class="wrap cf">
-		<div class="subheader-content <?php if ( get_theme_mod( 'ti_header_contactform7_shortcode' ) ) { } else { echo 'subheader-content-no-sidebar'; } ?>">
+		<div class="subheader-content <?php if ( is_active_sidebar( 'subheader_sidebar' ) ) { } else { echo 'subheader-content-no-sidebar'; } ?>">
 			<h3>
 				<?php
 				if ( get_theme_mod( 'ti_frontpage_header_title' ) ) {
@@ -21,16 +21,11 @@
 			</div><!--/.subheader-content-entry-->
 		</div><!--/.subheader-content-->
 		<?php
-		if ( get_theme_mod( 'ti_header_contactform7_shortcode' ) ) {
-			echo '<div class="subheader-widget">';
 
-			if ( get_theme_mod( 'ti_header_contactform7_title' ) ) {
-				echo '<h3>'. get_theme_mod( 'ti_header_contactform7_title' ) .'</h3>';
-			}
-
-			echo do_shortcode( get_theme_mod( 'ti_header_contactform7_shortcode' ) );
-			echo '</div>';
+		if ( is_active_sidebar( 'subheader_sidebar' ) ) {
+			dynamic_sidebar( 'subheader_sidebar' );
 		}
+
 		?>
 	</div><!--/.wrap .cf-->
 </section><!--/#subheader-->

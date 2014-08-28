@@ -1,10 +1,10 @@
 <?php
-	/*
-    ** The template for displaying Single.
-    **
-    ** @package Movatique
-    */
-	get_header();
+/**
+ *	The template for displaying Single.
+ *
+ *	@package ThemeIsle
+ */
+get_header();
 ?>
 <div class="wrap">
 	<?php

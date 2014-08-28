@@ -1,12 +1,12 @@
 <?php
-	/*
-    ** The template for displaying Page Blog.
-    **
-    ** @package Movatique
-    **
-	** Template Name: Blog
-	*/
-	get_header();
+/**
+ *	The template for displaying Page Blog.
+ *
+ *	@package ThemeIsle
+ *
+ *	Template Name: Blog
+ */
+get_header();
 ?>
 <div class="wrap cf">
 	<div class="blog-title">
@@ -36,7 +36,7 @@
 						</h2><!--/h2-->
 						<ul class="meta-post cf">
 							<li class="author-icon">
-								<?php the_author_posts_link(); ?> 
+								<?php the_author_posts_link(); ?>
 							</li><!--/li .author-icon-->
 							<li class="calendar-icon">
 								<?php echo the_time( get_option( 'date_format' ) ); ?>

@@ -1,9 +1,8 @@
 <?php
-/*
-** Includes files
-*/
+/**
+ *  Require Once
+ */
 require_once ( 'includes/custom-functions.php' );
-require_once ( 'includes/custom-widgets.php' );
 require_once ( 'includes/metaboxes/example-functions.php' );
 require_once ( 'includes/shortcodes.php' );
 require_once ( 'includes/customizer.php' );
@@ -12,19 +11,22 @@ if ( ! isset( $content_width ) ) $content_width = 634;
 
 add_theme_support( 'automatic-feed-links' );
 
-/*
-** WP Enqueue Style
-*/
+/**
+ *  WP Enqueue Style
+ */
 function wp_enqueue_style_movatique() {
     wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '1.0' );
     wp_enqueue_style( 'fancybox', get_template_directory_uri() . '/css/jquery.fancybox.css', array(), '1.0' );
+    if ( is_rtl() ) {
+        wp_enqueue_style( 'rtl', get_template_directory_uri() . '/css/rtl.css', array(), '1.0' );
+    }
 }
 
 add_action( 'wp_enqueue_scripts', 'wp_enqueue_style_movatique' );
 
-/*
-** WP Enqueue Script Movatique
-*/
+/**
+ *  WP Enqueue Script Movatique
+ */
 function wp_enqueue_script_movatique() {
     wp_enqueue_script( 'jquery');
     wp_enqueue_script( 'carouFredSel', get_template_directory_uri() . '/js/jquery.carouFredSel-6.2.1-packed.js', array( 'jquery' ), '6.2.1', true );
@@ -35,9 +37,9 @@ function wp_enqueue_script_movatique() {
 
 add_action( 'wp_enqueue_scripts', 'wp_enqueue_script_movatique' );
 
-/*
-** Navigation Menu
-*/
+/**
+ *  Navigation Menu
+ */
 function navigation_menu() {
 
 	$locations = array(
@@ -49,14 +51,14 @@ function navigation_menu() {
 
 add_action( 'init', 'navigation_menu' );
 
-/*
-** Theme Support
-*/
+/**
+ *  Theme Support
+ */
 add_theme_support( 'post-thumbnails' ); /* Post Thumbnails */
 
-/*
-** General Sidebar
-*/
+/**
+ *  General Sidebar
+ */
 function general_sidebar() {
 
 	$args = array(
@@ -74,9 +76,9 @@ function general_sidebar() {
 
 add_action( 'widgets_init', 'general_sidebar' );
 
-/*
-** Footer Sidebar
-*/
+/**
+ *  Footer Sidebar
+ */
 function footer_sidebar() {
 
     $args = array(
@@ -94,29 +96,9 @@ function footer_sidebar() {
 
 add_action( 'widgets_init', 'footer_sidebar' );
 
-/*
-** Footer Sidebar
-*/
-function subheader_sidebar() {
-
-    $args = array(
-        'id'            => 'subheader_sidebar',
-        'name'          => __( 'Subheader Sidebar', 'ti' ),
-        'description'   => __( 'This sidebar will appear in subheader.', 'ti' ),
-        'before_title'  => '<h3>',
-        'after_title'   => '</h3>',
-        'before_widget' => '<div id="%1$s" class="subheader-widget %2$s">',
-        'after_widget'  => '</div>',
-    );
-    register_sidebar( $args );
-
-}
-
-add_action( 'widgets_init', 'subheader_sidebar' );
-
-/*
-** Custom Post Type: Testimonials
-*/
+/**
+ *  Custom Post Type: Testimonials
+ */
 function testimonials() {
 
     $labels = array(
@@ -160,9 +142,9 @@ function testimonials() {
 
 add_action( 'init', 'testimonials', 0 );
 
-/*
-** Post Gallery
-*/
+/**
+ *  Post Gallery
+ */
 add_filter('post_gallery', 'my_post_gallery', 10, 2);
 function my_post_gallery($output, $attr) {
     global $post;
@@ -225,3 +207,4 @@ function my_post_gallery($output, $attr) {
     return $output;
 }
 
+?>

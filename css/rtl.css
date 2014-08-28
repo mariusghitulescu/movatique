@@ -1,60 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic,900,900italic,100italic,100);
-/*
-Theme Name: Movatique
-Theme URI: http://demo.themeisle.com/movatique/
-Author: The ThemeIsle team
-Author URI: http://www.themeisle.com
-Description: Premium WordPressTheme for ThemeIsle
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: white, yellow, light, two-columns, right-sidebar, custom-menu, featured-images, post-formats, sticky-post, translation-ready
-Text Domain: ti
-Version: 1.2
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-**
-**	1 - General
-**		1.1 Import SCSS
-**		1.2 General Style
-**		1.3 Header
-**		1.4 Subheader
-**		1.5 Footer
-**
-**	2 - Index
-**		2.1 Features
-**		2.2 Content Article
-**		2.3 Features Two
-**		2.4 Testimonials
-**		2.5 Our Clients
-**
-**	3 - Blog
-**		3.1 Content Left
-**		3.2 Sidebar
-**		3.3 Single
-**			3.3.1 Comments
-**
-**	4 - Testimonials
-**
-**	5 - Contact
-**
-**	6 - Pricing Tables
-**
-**	7 - 404 Page
-**
-**	8 - Responsive
-**		8.1 Max Width: 320px
-**		8.2 Max Width: 480px
-**		8.3 Max Width: 580px
-**		8.4 Max Width: 768px
-**		8.5 Max Width: 1024px
-*/
-/*
-**	1 General
-**
-**	1.1 Import SCSS
-*/
-/* line 13, sass/_reset.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -91,6 +34,9 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 14px;
+  direction: rtl;
+  unicode-bidi: embed;
+  text-align: right;
 }
 
 /* line 36, sass/_reset.scss */
@@ -154,7 +100,7 @@ table {
 .title-border {
   width: 100%;
   height: 30px;
-  background: url("images/border-image.png") repeat-x center;
+  background: url("../images/border-image.png") repeat-x center;
 }
 /* line 82, sass/style.scss */
 .title-border h3 {
@@ -174,7 +120,7 @@ table {
 .single-subtitle {
   width: 100%;
   height: 30px;
-  background: url("images/border-image.png") repeat-x center;
+  background: url("../images/border-image.png") repeat-x center;
 }
 /* line 103, sass/style.scss */
 .single-subtitle h5 {
@@ -213,7 +159,7 @@ header .header-top {
 header .header-top .header-top-contact {
   line-height: 60px;
   font-size: 18px;
-  float: left;
+  float: right;
 }
 /* line 140, sass/style.scss */
 header .header-top .header-top-contact span {
@@ -235,14 +181,14 @@ header .header-top .header-top-contact a:hover {
 }
 /* line 155, sass/style.scss */
 header .header-top .header-top-socials {
-  float: right;
+  float: left;
 }
 /* line 158, sass/style.scss */
 header .header-top .header-top-socials a {
-  margin: 23px 0 0 18px;
+  margin: 23px 18px 0 0;
   display: block;
   fill: #babec2;
-  float: left;
+  float: right;
 }
 /* line 164, sass/style.scss */
 header .header-top .header-top-socials a:hover {
@@ -254,7 +200,7 @@ header .logo {
   height: 30px;
   margin-top: 45px;
   margin-bottom: 45px;
-  float: left;
+  float: right;
 }
 /* line 178, sass/style.scss */
 header .logo img {
@@ -269,18 +215,19 @@ header .openresponsivemenu {
 header nav {
   height: 60px;
   margin-top: 30px;
-  float: right;
+  float: left;
 }
 /* line 193, sass/style.scss */
 header nav ul {
-  float: right;
+  float: left;
 }
 /* line 197, sass/style.scss */
 header nav li {
-  padding-left: 50px;
+  padding-right: 50px;
+  padding-left: 0;
   list-style: none;
   position: relative;
-  float: left;
+  float: right;
 }
 /* line 203, sass/style.scss */
 header nav li a {
@@ -294,7 +241,7 @@ header nav li a {
 }
 /* line 212, sass/style.scss */
 header nav li a:hover {
-  background: url("images/menu-hover.png") repeat-x 0px 44px;
+  background: url("../images/menu-hover.png") repeat-x 0px 44px;
 }
 /* line 217, sass/style.scss */
 header nav li ul {
@@ -307,8 +254,8 @@ header nav li ul {
 /* line 224, sass/style.scss */
 header nav li ul li {
   width: 100%;
-  padding-left: 0px;
   padding-right: 0px;
+  padding-left: 0px;
   border-bottom: 1px solid #ccc;
   float: none;
 }
@@ -316,7 +263,7 @@ header nav li ul li {
 header nav li ul li a {
   height: auto;
   line-height: 40px;
-  padding-left: 15px;
+  padding-right: 15px;
   padding-bottom: 0px;
 }
 /* line 237, sass/style.scss */
@@ -326,7 +273,7 @@ header nav li ul li a:hover {
 /* line 243, sass/style.scss */
 header nav li ul ul {
   top: 0px;
-  left: 100%;
+  right: 100%;
 }
 /* line 249, sass/style.scss */
 header nav li:hover > ul {
@@ -334,13 +281,13 @@ header nav li:hover > ul {
 }
 /* line 255, sass/style.scss */
 header nav ul .page_item_has_children {
-  background: url("images/sub-menu-arrow-icon.png") no-repeat right 30px;
-  padding-right: 16px;
+  background: url("../images/sub-menu-arrow-icon.png") no-repeat left 30px;
+  padding-left: 16px;
 }
 /* line 260, sass/style.scss */
 header nav ul li ul .page_item_has_children {
   background: none;
-  padding-right: 0px;
+  padding-left: 0px;
 }
 
 /*
@@ -350,7 +297,7 @@ header nav ul li ul .page_item_has_children {
 #subheader {
   width: 100%;
   padding: 60px 0px;
-  background: url("images/subheader-background.png") no-repeat;
+  background: url("../images/subheader-background.png") no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -365,7 +312,7 @@ header nav ul li ul .page_item_has_children {
 /* line 284, sass/style.scss */
 #subheader .subheader-content {
   width: 468px;
-  float: left;
+  float: right;
 }
 /* line 288, sass/style.scss */
 #subheader .subheader-content .subheader-content-entry {
@@ -383,7 +330,7 @@ header nav ul li ul .page_item_has_children {
 /* line 305, sass/style.scss */
 #subheader .subheader-widget {
   width: 466px;
-  float: right;
+  float: left;
 }
 /* line 309, sass/style.scss */
 #subheader .subheader-widget h3 {
@@ -392,7 +339,7 @@ header nav ul li ul .page_item_has_children {
 /* line 316, sass/style.scss */
 #subheader .wpcf7 .subheader-form-left {
   width: 160px;
-  float: left;
+  float: right;
 }
 /* line 320, sass/style.scss */
 #subheader .wpcf7 .subheader-form-left input {
@@ -430,13 +377,13 @@ header nav ul li ul .page_item_has_children {
   color: #a8a8a8;
 }
 /* line 354, sass/style.scss */
-#subheader .wpcf7 .subheader-form-left input[type="email"] {
+#subheader .wpcf7 .subheader-form-right input[type="email"] {
   margin: 8px 0;
 }
 /* line 359, sass/style.scss */
 #subheader .wpcf7 .subheader-form-right {
   width: 300px;
-  float: right;
+  float: left;
 }
 /* line 363, sass/style.scss */
 #subheader .wpcf7 .subheader-form-right textarea {
@@ -475,7 +422,7 @@ header nav ul li ul .page_item_has_children {
   color: #a8a8a8;
 }
 /* line 398, sass/style.scss */
-#subheader .wpcf7 .subheader-form-right input[type="submit"] {
+#subheader .wpcf7 .subheader-form-left input[type="submit"] {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -496,26 +443,8 @@ header nav ul li ul .page_item_has_children {
   font-size: 12px;
 }
 /* line 416, sass/style.scss */
-#subheader .wpcf7 .subheader-form-right input[type="submit"]:hover {
+#subheader .wpcf7 .subheader-form-left input[type="submit"]:hover {
   background: #fbdb5e;
-}
-
-#subheader .wpcf7 .wpcf7-response-output {
-  width: 100%;
-  margin: 0;
-  padding-left: 0;
-  border: none;
-  float: left;
-}
-
-#subheader .wpcf7 .subheader-form-left .your-email .wpcf7-not-valid-tip {
-  margin-bottom: 10px;
-  font-size: 12px;
-}
-
-#subheader .wpcf7 .subheader-form-left .your-name .wpcf7-not-valid-tip {
-  margin-top: 10px;
-  font-size: 12px;
 }
 
 /*
@@ -529,7 +458,7 @@ footer {
 /* line 431, sass/style.scss */
 .footer-one {
   width: 100%;
-  background: url("images/subheader-background.png");
+  background: url("../images/subheader-background.png");
   padding: 60px 0;
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
@@ -571,39 +500,40 @@ footer {
 .footer-one-widget {
   width: 302px;
   margin-bottom: 30px;
-  margin-left: 29px;
-  float: left;
+  margin-right: 29px;
+  margin-left: auto;
+  float: right;
   color: #8f9ca9;
   font-weight: 300;
   font-size: 13px;
 }
 /* line 483, sass/style.scss */
 .footer-one-widget:nth-child(1) {
-  margin-left: 0px;
+  margin-right: 0px;
 }
 /* line 487, sass/style.scss */
 .footer-one-widget:nth-child(4) {
-  margin-left: 0px;
+  margin-right: 0px;
 }
 /* line 491, sass/style.scss */
 .footer-one-widget:nth-child(7) {
-  margin-left: 0px;
+  margin-right: 0px;
 }
 /* line 495, sass/style.scss */
 .footer-one-widget:nth-child(10) {
-  margin-left: 0px;
+  margin-right: 0px;
 }
 /* line 499, sass/style.scss */
 .footer-one-widget:nth-child(13) {
-  margin-left: 0px;
+  margin-right: 0px;
 }
 /* line 503, sass/style.scss */
 .footer-one-widget:nth-child(16) {
-  margin-left: 0px;
+  margin-right: 0px;
 }
 /* line 507, sass/style.scss */
 .footer-one-widget:nth-child(19) {
-  margin-left: 0px;
+  margin-right: 0px;
 }
 /* line 511, sass/style.scss */
 .footer-one-widget .widget-title {
@@ -688,8 +618,8 @@ footer {
 /* line 590, sass/style.scss */
 .footer-one-widget .widget-recentcomments .widget-recentcomments-entry blockquote {
   margin: 5px 0;
-  padding-left: 5px;
-  border-left: 10px solid #eee;
+  padding-right: 5px;
+  border-right: 10px solid #eee;
 }
 /* line 597, sass/style.scss */
 .footer-one-widget .widget-recentcomments span {
@@ -742,11 +672,11 @@ footer {
 }
 /* line 647, sass/style.scss */
 .footer-one-widget table td#prev {
-  text-align: left;
+  text-align: right;
 }
 /* line 651, sass/style.scss */
 .footer-one-widget table td#next {
-  text-align: right;
+  text-align: left;
 }
 /* line 656, sass/style.scss */
 .footer-one-widget p {
@@ -893,12 +823,12 @@ footer {
   width: 260px;
   height: 40px;
   margin: 5px 0 0 0;
-  padding: 0 0 0 15px;
+  padding: 0 15px 0 0;
   border: 1px solid #e6eaed;
-  border-right: none;
+  border-left: none;
   outline: 0;
   color: #c4cacf;
-  float: left;
+  float: right;
   font-family: 'Roboto', sans-serif;
   font-style: italic;
 }
@@ -928,15 +858,15 @@ footer {
   box-sizing: border-box;
   width: 40px;
   height: 40px;
-  background: white url("images/searchform-input-submit.png") no-repeat center;
+  background: white url("../images/searchform-input-submit.png") no-repeat center;
   margin: 5px 0 0 0;
   padding: 0px;
   display: block;
   border: 1px solid #e6eaed;
-  border-left: none;
+  border-right: none;
   cursor: pointer;
   text-indent: -9999px;
-  float: left;
+  float: right;
 }
 
 /* line 839, sass/style.scss */
@@ -949,7 +879,7 @@ footer {
   line-height: 30px;
   displaY: block;
   color: #b3bec9;
-  float: left;
+  float: right;
   font-weight: 300;
   font-size: 10px;
 }
@@ -992,9 +922,9 @@ footer {
 #content-article .content-article-image {
   width: 468px;
   height: auto;
-  margin-right: 30px;
+  margin-left: 30px;
   margin-bottom: 15px;
-  float: left;
+  float: right;
 }
 /* line 890, sass/style.scss */
 #content-article .content-article-image img {
@@ -1035,7 +965,7 @@ footer {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: left;
+  align-items: right;
   justify-content: space-between;
 }
 /* line 936, sass/style.scss */
@@ -1050,7 +980,7 @@ footer {
 /* line 947, sass/style.scss */
 #features-two .features-box {
   width: 302px;
-  float: left;
+  float: right;
 }
 /* line 951, sass/style.scss */
 #features-two .features-box .features-box-icon {
@@ -1139,6 +1069,7 @@ footer {
   list-style: none;
   display: block;
   color: #000;
+  position: initial !important;
 }
 
 /* line 1020, sass/style.scss */
@@ -1153,7 +1084,7 @@ footer {
   display: block;
   position: relative;
   color: #a8a8a8;
-  float: left;
+  float: right;
   font-weight: 300;
   font-size: 13px;
 }
@@ -1170,9 +1101,9 @@ footer {
   content: " ";
   width: 18px;
   height: 16px;
-  background: url("images/quote-testimonials-left.png") no-repeat;
+  background: url("../images/quote-testimonials-left.png") no-repeat;
   position: absolute;
-  left: 3px;
+  right: 3px;
   bottom: 45px;
 }
 /* line 1052, sass/style.scss */
@@ -1180,17 +1111,17 @@ footer {
   content: " ";
   width: 18px;
   height: 16px;
-  background: url("images/quote-testimonials-right.png") no-repeat;
+  background: url("../images/quote-testimonials-right.png") no-repeat;
   position: absolute;
   top: 0px;
-  right: 0px;
+  left: 0px;
 }
 /* line 1062, sass/style.scss */
 .list_carousel .testimonial-box .testimonials-meta {
   width: 100%;
   height: 30px;
   margin-top: 15px;
-  background: url("images/border-image.png") repeat-x center;
+  background: url("../images/border-image.png") repeat-x center;
 }
 /* line 1068, sass/style.scss */
 .list_carousel .testimonial-box .testimonials-meta h6 {
@@ -1198,8 +1129,8 @@ footer {
   height: 30px;
   line-height: 30px;
   background: #fff;
-  margin-left: 30px;
-  padding-left: 10px;
+  margin-right: 30px;
+  padding-right: 10px;
   color: #a8a8a8;
 }
 /* line 1077, sass/style.scss */
@@ -1219,7 +1150,7 @@ footer {
 /* line 1093, sass/style.scss */
 .list_carousel.responsive {
   width: auto;
-  margin-left: 0;
+  margin-right: 0;
 }
 
 /* line 1098, sass/style.scss */
@@ -1235,7 +1166,7 @@ footer {
   fill: #d8d9dd;
   position: absolute;
   top: 30px;
-  left: 0px;
+  right: 0px;
 }
 /* line 1111, sass/style.scss */
 .testimonials-navigation-prev:hover {
@@ -1249,7 +1180,8 @@ footer {
   fill: #d8d9dd;
   position: absolute;
   top: 30px;
-  right: 0px;
+  left: 0px;
+  right: auto;
 }
 /* line 1124, sass/style.scss */
 .testimonials-navigation-next:hover {
@@ -1269,12 +1201,12 @@ footer {
 .our-clients img {
   max-width: 150px;
   max-height: 100%;
-  margin-left: 30px;
+  margin-right: 30px;
   vertical-align: middle;
 }
 /* line 1143, sass/style.scss */
 .our-clients img:first-child {
-  margin-left: 0px;
+  margin-right: 0px;
 }
 
 /*
@@ -1286,7 +1218,7 @@ footer {
 .blog-title {
   width: 100%;
   height: 30px;
-  background: url("images/border-image.png") repeat-x center;
+  background: url("../images/border-image.png") repeat-x center;
   margin-top: 60px;
 }
 /* line 1160, sass/style.scss */
@@ -1308,7 +1240,7 @@ footer {
 .content-left {
   width: 634px;
   margin: 60px 0;
-  float: left;
+  float: right;
 }
 /* line 1182, sass/style.scss */
 .content-left article {
@@ -1364,22 +1296,22 @@ footer {
 }
 /* line 1227, sass/style.scss */
 .content-left article ul.meta-post li {
-  margin-right: 16px;
+  margin-left: 16px;
   margin-bottom: 5px;
-  padding: 0px 13px 0px 26px;
-  border-right: 1px solid #192836;
+  padding: 0px 26px 0px 13px;
+  border-left: 1px solid #192836;
   color: #192836;
-  float: left;
+  float: right;
   font-weight: 300;
   font-size: 12px;
 }
 /* line 1239, sass/style.scss */
 .content-left article ul.meta-post li:last-child {
-  margin-left: 0px;
+  margin-right: 0px;
 }
 /* line 1243, sass/style.scss */
 .content-left article ul.meta-post li:last-child {
-  border-right: none;
+  border-left: none;
 }
 /* line 1247, sass/style.scss */
 .content-left article ul.meta-post li a {
@@ -1400,19 +1332,19 @@ footer {
 }
 /* line 1263, sass/style.scss */
 .content-left article ul.meta-post .author-icon {
-  background: url("images/meta-post-author-icon.png") no-repeat center left;
+  background: url("../images/meta-post-author-icon.png") no-repeat center right;
 }
 /* line 1267, sass/style.scss */
 .content-left article ul.meta-post .calendar-icon {
-  background: url("images/meta-post-calendar-icon.png") no-repeat center left;
+  background: url("../images/meta-post-calendar-icon.png") no-repeat center right;
 }
 /* line 1271, sass/style.scss */
 .content-left article ul.meta-post .comments-icon {
-  background: url("images/meta-post-comments-icon.png") no-repeat center left;
+  background: url("../images/meta-post-comments-icon.png") no-repeat center right;
 }
 /* line 1275, sass/style.scss */
 .content-left article ul.meta-post .category-icon {
-  background: url("images/meta-post-category-icon.png") no-repeat center left;
+  background: url("../images/meta-post-category-icon.png") no-repeat center right;
 }
 /* line 1278, sass/style.scss */
 .content-left article ul.meta-post .category-icon a {
@@ -1467,7 +1399,7 @@ footer {
   width: 80px;
   height: 30px;
   background: #fcd53a;
-  float: left;
+  float: right;
   text-transform: lowercase;
   color: #524200;
   display: inline;
@@ -1503,7 +1435,7 @@ footer {
   transition: all 0.3s;
   width: 80px;
   height: 30px;
-  float: right;
+  float: left;
   text-transform: lowercase;
   color: #524200;
   font-weight: 700;
@@ -1534,7 +1466,7 @@ footer {
   width: 30px;
   height: 30px;
   background: #eaedee;
-  margin-right: 15px;
+  margin-left: 15px;
   display: inline-block;
   color: #192836;
 }
@@ -1569,7 +1501,7 @@ footer {
 }
 /* line 1425, sass/style.scss */
 .content-left .posts-navigation ul li:last-of-type {
-  margin-right: 0px;
+  margin-left: 0px;
 }
 
 /* line 1432, sass/style.scss */
@@ -1577,7 +1509,7 @@ footer {
   width: 300px;
   margin: 60px 0;
   color: #192836;
-  float: right;
+  float: left;
 }
 /* line 1438, sass/style.scss */
 .sidebar .widget {
@@ -1657,12 +1589,12 @@ footer {
   width: 260px;
   height: 40px;
   margin: 5px 0 0 0;
-  padding: 0 0 0 15px;
+  padding: 0 15px 0 0;
   border: 1px solid #e6eaed;
-  border-right: none;
+  border-left: none;
   outline: 0;
   color: #c4cacf;
-  float: left;
+  float: right;
   font-family: 'Roboto', sans-serif;
   font-style: italic;
 }
@@ -1692,15 +1624,15 @@ footer {
   box-sizing: border-box;
   width: 40px;
   height: 40px;
-  background: transparent url("images/searchform-input-submit.png") no-repeat center;
+  background: transparent url("../images/searchform-input-submit.png") no-repeat center;
   margin: 5px 0 0 0;
   padding: 0px;
   display: block;
   border: 1px solid #e6eaed;
-  border-left: none;
+  border-right: none;
   cursor: pointer;
   text-indent: -9999px;
-  float: left;
+  float: right;
 }
 /* line 1559, sass/style.scss */
 .sidebar .widget .widget-recentcomments {
@@ -1768,15 +1700,15 @@ footer {
 /* line 1619, sass/style.scss */
 .sidebar .widget .widget-recentcomments .widget-recentcomments-entry blockquote {
   margin: 5px 0;
-  padding-left: 5px;
-  border-left: 10px solid #eee;
+  padding-right: 5px;
+  border-right: 10px solid #eee;
 }
 /* line 1626, sass/style.scss */
 .sidebar .widget .widget-recentcomments span {
   width: 20px;
   height: 11px;
-  background: url("images/widget-recentcomments-arrow-icon.png") no-repeat;
-  margin: -1px 0 0 27px;
+  background: url("../images/widget-recentcomments-arrow-icon.png") no-repeat;
+  margin: -1px 27px 0 0;
   display: block;
 }
 /* line 1634, sass/style.scss */
@@ -1822,11 +1754,11 @@ footer {
 }
 .sidebar .widget #wp-calendar thead th {
   padding-bottom: 5px;
-  border-right: 1px solid #e5e5e5;
+  border-left: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
 }
 .sidebar .widget #wp-calendar thead th:last-child {
-  border-right: none;
+  border-left: none;
 }
 .sidebar .widget #wp-calendar tbody {
   color: #686868;
@@ -1844,18 +1776,18 @@ footer {
   border-bottom: none;
 }
 .sidebar .widget #wp-calendar tbody tr td {
-  border-right: 1px solid #e5e5e5;
+  border-left: 1px solid #e5e5e5;
   padding: 7px;
 }
 .sidebar .widget #wp-calendar tbody tr td:last-child {
-  border-right: none;
+  border-left: none;
 }
 .sidebar .widget #wp-calendar tfoot {
   font-size: 14px;
   color: #686868;
 }
 .sidebar .widget #wp-calendar tfoot #next {
-  text-align: right;
+  text-align: left;
 }
 .sidebar .widget #wp-calendar td#prev {
   padding-top: 10px;
@@ -1952,14 +1884,14 @@ footer {
 }
 /* line 1802, sass/style.scss */
 #single .post-password-form label {
-  float: left;
+  float: right;
 }
 /* line 1806, sass/style.scss */
 #single .post-password-form input[type="submit"] {
   height: 30px;
   margin-top: 0px;
-  margin-left: 5px;
-  float: left;
+  margin-right: 5px;
+  float: right;
 }
 /* line 1814, sass/style.scss */
 #single h1 {
@@ -2029,7 +1961,7 @@ footer {
 }
 /* line 1894, sass/style.scss */
 #single dl dd {
-  margin: 5px 0 2px 15px;
+  margin: 5px 15px 2px 0;
 }
 /* line 1901, sass/style.scss */
 #single ul li {
@@ -2038,7 +1970,7 @@ footer {
 }
 /* line 1905, sass/style.scss */
 #single ul li ul {
-  margin-left: 15px;
+  margin-right: 15px;
 }
 /* line 1913, sass/style.scss */
 #single ol li {
@@ -2048,7 +1980,7 @@ footer {
 }
 /* line 1918, sass/style.scss */
 #single ol li ol {
-  margin-left: 10px;
+  margin-right: 10px;
 }
 /* line 1924, sass/style.scss */
 #single a {
@@ -2094,8 +2026,8 @@ footer {
 }
 /* line 1966, sass/style.scss */
 #single pre {
-  padding-left: 10px;
-  border-left: 10px solid #eee;
+  padding-right: 10px;
+  border-right: 10px solid #eee;
 }
 /* line 1971, sass/style.scss */
 #single q {
@@ -2115,19 +2047,19 @@ footer {
 }
 /* line 1987, sass/style.scss */
 #single img.alignright {
-  float: right;
-  margin: 0 0 1em 1em;
+  float: left;
+  margin: 0 1em 1em 0;
 }
 /* line 1992, sass/style.scss */
 #single img.alignleft {
-  float: left;
-  margin: 0 1em 1em 0;
+  float: right;
+  margin: 0 0 1em 1em;
 }
 /* line 1997, sass/style.scss */
 #single img.aligncenter {
   display: block;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 /* line 2003, sass/style.scss */
 #single img {
@@ -2145,17 +2077,17 @@ footer {
 }
 /* line 2017, sass/style.scss */
 #single .alignright {
-  float: right;
+  float: left;
 }
 /* line 2021, sass/style.scss */
 #single .alignleft {
-  float: left;
+  float: right;
 }
 /* line 2025, sass/style.scss */
 #single .aligncenter {
   display: block;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 /* line 2031, sass/style.scss */
 #single ul.meta-post {
@@ -2167,23 +2099,23 @@ footer {
 /* line 2037, sass/style.scss */
 #single ul.meta-post li {
   height: 12px;
-  margin-right: 16px;
+  margin-left: 16px;
   margin-bottom: 5px;
-  padding: 0px 13px 0px 26px;
-  border-right: 1px solid #192836;
+  padding: 0px 26px 0px 13px;
+  border-left: 1px solid #192836;
   color: #192836;
   list-style-type: none !important;
-  float: left;
+  float: right;
   font-weight: 300;
   font-size: 12px;
 }
 /* line 2051, sass/style.scss */
 #single ul.meta-post li:first-child {
-  margin-left: 0px;
+  margin-right: 0px;
 }
 /* line 2055, sass/style.scss */
 #single ul.meta-post li:last-child {
-  border-right: none;
+  border-left: none;
 }
 /* line 2059, sass/style.scss */
 #single ul.meta-post li a {
@@ -2205,19 +2137,19 @@ footer {
 }
 /* line 2076, sass/style.scss */
 #single ul.meta-post .author-icon {
-  background: url("images/meta-post-author-icon.png") no-repeat center left;
+  background: url("../images/meta-post-author-icon.png") no-repeat center right;
 }
 /* line 2080, sass/style.scss */
 #single ul.meta-post .calendar-icon {
-  background: url("images/meta-post-calendar-icon.png") no-repeat center left;
+  background: url("../images/meta-post-calendar-icon.png") no-repeat center right;
 }
 /* line 2084, sass/style.scss */
 #single ul.meta-post .comments-icon {
-  background: url("images/meta-post-comments-icon.png") no-repeat center left;
+  background: url("../images/meta-post-comments-icon.png") no-repeat center right;
 }
 /* line 2088, sass/style.scss */
 #single ul.meta-post .category-icon {
-  background: url("images/meta-post-category-icon.png") no-repeat center left;
+  background: url("../images/meta-post-category-icon.png") no-repeat center right;
 }
 /* line 2093, sass/style.scss */
 #single .single-entry {
@@ -2288,7 +2220,7 @@ footer {
   padding: 0px 30px;
   display: block;
   color: #a8a8a8;
-  float: left;
+  float: right;
   font-weight: 300;
   font-size: 12px;
 }
@@ -2300,8 +2232,8 @@ footer {
 #single .similar-articles .list_carousel .similar-articles-box .similar-articles-image {
   width: 78px;
   height: auto;
-  margin-right: 15px;
-  float: left;
+  margin-left: 15px;
+  float: right;
 }
 /* line 2176, sass/style.scss */
 #single .similar-articles .list_carousel .similar-articles-box .similar-articles-image img {
@@ -2332,7 +2264,7 @@ footer {
 /* line 2206, sass/style.scss */
 #single .similar-articles .list_carousel.responsive {
   width: auto;
-  margin-left: 0;
+  margin-right: 0;
 }
 /* line 2211, sass/style.scss */
 #single .similar-articles .clearfix {
@@ -2343,19 +2275,19 @@ footer {
 #single .similar-articles .similar-articles-navigation-prev {
   width: 7px;
   height: 17px;
-  background: url("images/related-articles-arrow-left.png") no-repeat;
+  background: url("../images/related-articles-arrow-left.png") no-repeat;
   position: absolute;
   top: 37px;
-  left: 4px;
+  right: 4px;
 }
 /* line 2225, sass/style.scss */
 #single .similar-articles .similar-articles-navigation-next {
   width: 7px;
   height: 17px;
-  background: url("images/related-articles-arrow-right.png") no-repeat;
+  background: url("../images/related-articles-arrow-right.png") no-repeat;
   position: absolute;
   top: 37px;
-  right: 4px;
+  left: 4px;
 }
 
 /* line 2236, sass/style.scss */
@@ -2365,7 +2297,7 @@ footer {
 
 /* line 2240, sass/style.scss */
 .gallery-item {
-  float: left;
+  float: right;
 }
 /* line 2243, sass/style.scss */
 .gallery-item a.fancybox {
@@ -2668,7 +2600,7 @@ dl.gallery-columns-9 .wp-caption-text {
 }
 /* line 2444, sass/style.scss */
 .comments-list .children {
-  margin-left: 62px;
+  margin-right: 62px;
   list-style-type: none !important;
 }
 /* line 2449, sass/style.scss */
@@ -2678,15 +2610,15 @@ dl.gallery-columns-9 .wp-caption-text {
 /* line 2453, sass/style.scss */
 .comments-list .comments-list-left {
   width: 634px;
-  float: left;
+  float: right;
 }
 /* line 2457, sass/style.scss */
 .comments-list .comments-list-left img {
   width: 62px;
   height: 62px;
-  margin-right: 32px;
+  margin-left: 32px;
   margin-bottom: 10px;
-  float: left;
+  float: right;
 }
 /* line 2465, sass/style.scss */
 .comments-list .comments-list-left .comments-author-name {
@@ -2775,7 +2707,7 @@ dl.gallery-columns-9 .wp-caption-text {
 }
 /* line 2555, sass/style.scss */
 .comments-list .comments-list-left .comments-author-entry dl dd {
-  margin: 5px 0 2px 15px;
+  margin: 5px 15px 2px 0;
 }
 /* line 2562, sass/style.scss */
 .comments-list .comments-list-left .comments-author-entry ul li {
@@ -2785,7 +2717,7 @@ dl.gallery-columns-9 .wp-caption-text {
 }
 /* line 2567, sass/style.scss */
 .comments-list .comments-list-left .comments-author-entry ul li ul {
-  margin-left: 15px;
+  margin-right: 15px;
 }
 /* line 2575, sass/style.scss */
 .comments-list .comments-list-left .comments-author-entry ol li {
@@ -2795,7 +2727,7 @@ dl.gallery-columns-9 .wp-caption-text {
 }
 /* line 2580, sass/style.scss */
 .comments-list .comments-list-left .comments-author-entry ol li ol {
-  margin-left: 10px;
+  margin-right: 10px;
 }
 /* line 2586, sass/style.scss */
 .comments-list .comments-list-left .comments-author-entry a {
@@ -2841,8 +2773,8 @@ dl.gallery-columns-9 .wp-caption-text {
 }
 /* line 2628, sass/style.scss */
 .comments-list .comments-list-left .comments-author-entry pre {
-  padding-left: 10px;
-  border-left: 10px solid #eee;
+  padding-right: 10px;
+  border-right: 10px solid #eee;
 }
 /* line 2633, sass/style.scss */
 .comments-list .comments-list-left .comments-author-entry q {
@@ -2863,7 +2795,7 @@ dl.gallery-columns-9 .wp-caption-text {
 /* line 2651, sass/style.scss */
 .comments-list .comments-list-meta {
   margin-top: 25px;
-  float: right;
+  float: left;
   font-weight: 300;
   font-size: 12px;
 }
@@ -2871,9 +2803,9 @@ dl.gallery-columns-9 .wp-caption-text {
 .comments-list .comments-list-meta span {
   height: 12px;
   line-height: 12px;
-  margin-right: 30px;
-  padding-right: 30px;
-  border-right: 1px solid #a8a8a8;
+  margin-left: 30px;
+  padding-left: 30px;
+  border-left: 1px solid #a8a8a8;
 }
 /* line 2666, sass/style.scss */
 .comments-list .comments-list-meta span a {
@@ -2907,12 +2839,12 @@ dl.gallery-columns-9 .wp-caption-text {
   box-sizing: border-box;
   width: 316px;
   height: 40px;
-  margin: 0 0 0 8px;
+  margin: 0 8px 0 0;
   padding: 0 15px;
   display: block;
   border: 1px solid #e6eaed;
   outline: 0;
-  float: left;
+  float: right;
   color: #a8a8a8;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
@@ -2920,7 +2852,7 @@ dl.gallery-columns-9 .wp-caption-text {
 }
 /* line 2708, sass/style.scss */
 #respond input:first-child {
-  margin-left: 0px;
+  margin-right: 0px;
 }
 /* line 2712, sass/style.scss */
 #respond input:focus {
@@ -3066,7 +2998,7 @@ input[type="submit"]:hover {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: left;
+  align-items: right;
   justify-content: space-between;
   border-bottom: 1px solid #ebebeb;
   padding-bottom: 60px;
@@ -3075,7 +3007,7 @@ input[type="submit"]:hover {
 #testimonials .testimonials-boxes .testimonials-box {
   width: 302px;
   margin-top: 60px;
-  float: left;
+  float: right;
 }
 /* line 2856, sass/style.scss */
 #testimonials .testimonials-boxes .testimonial-box-entry {
@@ -3096,9 +3028,9 @@ input[type="submit"]:hover {
   content: " ";
   width: 13px;
   height: 11px;
-  background: url("images/testimonial-box1-arrow-left.png") no-repeat;
+  background: url("../images/testimonial-box1-arrow-left.png") no-repeat;
   position: absolute;
-  left: 10px;
+  right: 10px;
   bottom: 16px;
 }
 /* line 2878, sass/style.scss */
@@ -3106,27 +3038,27 @@ input[type="submit"]:hover {
   content: " ";
   width: 13px;
   height: 11px;
-  background: url("images/testimonial-box1-arrow-right.png") no-repeat;
+  background: url("../images/testimonial-box1-arrow-right.png") no-repeat;
   position: absolute;
   top: 16px;
-  right: 10px;
+  left: 10px;
 }
 /* line 2889, sass/style.scss */
 #testimonials .testimonials-boxes span {
   width: 21px;
   height: 15px;
-  background: url("images/testimonial-box-arrow-bottom.png") no-repeat;
+  background: url("../images/testimonial-box-arrow-bottom.png") no-repeat;
   margin-top: -1px;
-  margin-left: 47px;
+  margin-right: 47px;
   position: relative;
-  float: left;
+  float: right;
 }
 /* line 2899, sass/style.scss */
 #testimonials .testimonials-boxes .testimonial-box-detail {
   width: 100%;
   margin-top: 15px;
   color: #a8a8a8;
-  float: left;
+  float: right;
   font-weight: 300;
   font-size: 14px;
 }
@@ -3134,8 +3066,8 @@ input[type="submit"]:hover {
 #testimonials .testimonials-boxes .testimonial-box-detail img {
   width: 53px;
   height: 53px;
-  margin-right: 37px;
-  float: left;
+  margin-left: 37px;
+  float: right;
 }
 /* line 2916, sass/style.scss */
 #testimonials .testimonials-boxes .testimonial-box-detail b a {
@@ -3173,13 +3105,13 @@ input[type="submit"]:hover {
 /* line 2950, sass/style.scss */
 .contact-left {
   width: 634px;
-  float: left;
+  float: right;
 }
 /* line 2954, sass/style.scss */
 .contact-left .contact-title {
   width: 100%;
   height: 40px;
-  background: url("images/border-image.png") repeat-x center;
+  background: url("../images/border-image.png") repeat-x center;
 }
 /* line 2959, sass/style.scss */
 .contact-left .contact-title h1 {
@@ -3223,7 +3155,7 @@ input[type="submit"]:hover {
   border: 1px solid #e6eaed;
   outline: 0;
   color: #a8a8a8;
-  float: left;
+  float: right;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 12px;
@@ -3252,7 +3184,7 @@ input[type="submit"]:hover {
   color: #192836;
 }
 /* line 3032, sass/style.scss */
-.contact-left .wpcf7-form input[type="email"] {
+.contact-right .wpcf7-form input[type="email"] {
   margin: 0 8px;
 }
 /* line 3036, sass/style.scss */
@@ -3269,7 +3201,7 @@ input[type="submit"]:hover {
   outline: 0;
   color: #a8a8a8;
   display: block;
-  float: left;
+  float: right;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 12px;
@@ -3298,7 +3230,7 @@ input[type="submit"]:hover {
   color: #192836;
 }
 /* line 3077, sass/style.scss */
-.contact-left .wpcf7-form input[type="submit"] {
+.contact-right .wpcf7-form input[type="submit"] {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -3317,27 +3249,15 @@ input[type="submit"]:hover {
   font-size: 12px;
 }
 /* line 3093, sass/style.scss */
-.contact-left .wpcf7-form input[type="submit"]:hover {
+.contact-right .wpcf7-form input[type="submit"]:hover {
   background: #192836;
   color: #fff;
-}
-
-.contact-left .wpcf7-form .wpcf7-response-output {
-  width: 100%;
-  margin: 10px 0 0 0;
-  padding-left: 0;
-  border: none;
-  float: left;
-}
-
-.contact-left .wpcf7-form .wpcf7-not-valid-tip {
-  display: none;
 }
 
 /* line 3101, sass/style.scss */
 .contact-right {
   width: 300px;
-  float: right;
+  float: left;
 }
 /* line 3105, sass/style.scss */
 .contact-right .contact-widget {
@@ -3393,8 +3313,8 @@ input[type="submit"]:hover {
 .contact-right .contact-widget .contact-socials a {
   width: 12px;
   height: 15px;
-  margin-right: 18px;
-  float: left;
+  margin-left: 18px;
+  float: right;
   text-decoration: none;
   fill: #babec2;
 }
@@ -3499,7 +3419,7 @@ input[type="submit"]:hover {
 }
 /* line 3278, sass/style.scss */
 .pricing-entry dl dd {
-  margin: 5px 0 2px 15px;
+  margin: 5px 15px 2px 0;
 }
 /* line 3285, sass/style.scss */
 .pricing-entry ul li {
@@ -3508,7 +3428,7 @@ input[type="submit"]:hover {
 }
 /* line 3289, sass/style.scss */
 .pricing-entry ul li ul {
-  margin-left: 15px;
+  margin-right: 15px;
 }
 /* line 3297, sass/style.scss */
 .pricing-entry ol li {
@@ -3518,7 +3438,7 @@ input[type="submit"]:hover {
 }
 /* line 3302, sass/style.scss */
 .pricing-entry ol li ol {
-  margin-left: 10px;
+  margin-right: 10px;
 }
 /* line 3308, sass/style.scss */
 .pricing-entry a {
@@ -3564,8 +3484,8 @@ input[type="submit"]:hover {
 }
 /* line 3350, sass/style.scss */
 .pricing-entry pre {
-  padding-left: 10px;
-  border-left: 10px solid #eee;
+  padding-right: 10px;
+  border-right: 10px solid #eee;
 }
 /* line 3355, sass/style.scss */
 .pricing-entry q {
@@ -3585,19 +3505,19 @@ input[type="submit"]:hover {
 }
 /* line 3371, sass/style.scss */
 .pricing-entry img.alignright {
-  float: right;
-  margin: 0 0 1em 1em;
+  float: left;
+  margin: 0 1em 1em 0;
 }
 /* line 3376, sass/style.scss */
 .pricing-entry img.alignleft {
-  float: left;
-  margin: 0 1em 1em 0;
+  float: right;
+  margin: 0 0 1em 1em;
 }
 /* line 3381, sass/style.scss */
 .pricing-entry img.aligncenter {
   display: block;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 /* line 3387, sass/style.scss */
 .pricing-entry img {
@@ -3624,7 +3544,7 @@ input[type="submit"]:hover {
   padding-top: 30px;
   padding-bottom: 30px;
   font-size: 14px;
-  float: left;
+  float: right;
 }
 /* line 3414, sass/style.scss */
 .pricing-column .pricing-title {
@@ -3711,7 +3631,7 @@ input[type="submit"]:hover {
   padding-top: 30px;
   padding-bottom: 30px;
   font-size: 14px;
-  float: left;
+  float: right;
 }
 /* line 3496, sass/style.scss */
 .pricing-featured .pricing-title {
@@ -3727,8 +3647,8 @@ input[type="submit"]:hover {
   text-align: center;
   color: #a8a8a8;
   font-weight: 300;
-  border-left: 1px solid #fdfdfd;
   border-right: 1px solid #fdfdfd;
+  border-left: 1px solid #fdfdfd;
 }
 /* line 3509, sass/style.scss */
 .pricing-featured .pricing-title span {
@@ -3791,8 +3711,8 @@ input[type="submit"]:hover {
   color: #fff !important;
   text-decoration: none !important;
   text-transform: uppercase;
-  border-left: 1px solid #fdfdfd;
   border-right: 1px solid #fdfdfd;
+  border-left: 1px solid #fdfdfd;
   font-weight: 700;
   font-size: 18px;
 }
@@ -3806,7 +3726,7 @@ input[type="submit"]:hover {
 .pricing-details {
   width: 220px;
   margin-top: 90px;
-  float: right;
+  float: left;
 }
 /* line 3583, sass/style.scss */
 .pricing-details h4 {
@@ -3921,7 +3841,7 @@ input[type="submit"]:hover {
     width: 100% !important;
   }
   /* line 3711, sass/style.scss */
-  .content .contact-left .wpcf7-form input[type="email"] {
+  .content .contact-right .wpcf7-form input[type="email"] {
     margin: 8px 0 8px 0 !important;
   }
 
@@ -4019,7 +3939,7 @@ input[type="submit"]:hover {
   #comments .respond input {
     width: 100% !important;
     margin-top: 8px;
-    margin-left: 0px !important;
+    margin-right: 0px !important;
   }
   /* line 3849, sass/style.scss */
   #comments .respond input:first-child {
@@ -4030,7 +3950,7 @@ input[type="submit"]:hover {
   .content .contact-left .contact-left-form input {
     width: 100% !important;
     margin-top: 8px;
-    margin-left: 0px !important;
+    margin-right: 0px !important;
   }
   /* line 3870, sass/style.scss */
   .content .pricing-column {
@@ -4063,7 +3983,7 @@ input[type="submit"]:hover {
     margin-top: 40px;
     display: block;
     cursor: pointer;
-    float: right;
+    float: left;
   }
   /* line 3904, sass/style.scss */
   header .openresponsivemenu path {
@@ -4090,7 +4010,7 @@ input[type="submit"]:hover {
   /* line 3925, sass/style.scss */
   header .responsivemenu ul li {
     width: 100%;
-    padding-left: 0px;
+    padding-right: 0px;
   }
   /* line 3929, sass/style.scss */
   header .responsivemenu ul li a {
@@ -4114,7 +4034,7 @@ input[type="submit"]:hover {
   }
   /* line 3947, sass/style.scss */
   header .responsivemenu ul li ul li a {
-    padding-left: 0px;
+    padding-right: 0px;
     color: #ccc;
   }
   /* line 3951, sass/style.scss */
@@ -4124,8 +4044,8 @@ input[type="submit"]:hover {
   /* line 3959, sass/style.scss */
   header .responsivemenu ul .menu-item-has-children {
     background: none;
-    padding-left: 0px;
     padding-right: 0px;
+    padding-left: 0px;
   }
 
   /* line 3970, sass/style.scss */
@@ -4136,7 +4056,7 @@ input[type="submit"]:hover {
   /* line 3977, sass/style.scss */
   #content-article .content-article-image {
     width: 100%;
-    margin-right: 0;
+    margin-left: 0;
     float: none;
   }
   /* line 3982, sass/style.scss */
@@ -4171,7 +4091,7 @@ input[type="submit"]:hover {
   /* line 4014, sass/style.scss */
   #comments .comments-list .comments-list-meta {
     margin-top: 10px;
-    float: right;
+    float: left;
   }
 
   /* line 4025, sass/style.scss */
@@ -4195,7 +4115,7 @@ input[type="submit"]:hover {
   /* line 4045, sass/style.scss */
   #testimonials .testimonials-boxes .testimonials-box {
     width: 100%;
-    margin-left: 0px !important;
+    margin-right: 0px !important;
   }
 
   /* line 4052, sass/style.scss */
@@ -4206,7 +4126,7 @@ input[type="submit"]:hover {
   /* line 4060, sass/style.scss */
   footer .footer-one .footer-one-widget {
     width: 100%;
-    margin-left: 0px;
+    margin-right: 0px;
   }
   /* line 4066, sass/style.scss */
   footer .footer-one .footer-one-widget #calendar_wrap table {
@@ -4235,7 +4155,7 @@ input[type="submit"]:hover {
   #subheader .subheader-widget {
     width: 100%;
     margin-top: 30px;
-    float: left;
+    float: right;
   }
   /* line 4098, sass/style.scss */
   #subheader .subheader-widget .subheader-form-left {
@@ -4271,12 +4191,12 @@ input[type="submit"]:hover {
     width: 32.59%;
   }
   /* line 4138, sass/style.scss */
-  .content .contact-left .wpcf7-form input[type="email"] {
+  .content .contact-right .wpcf7-form input[type="email"] {
     margin: 0 1.1%;
   }
   /* line 4142, sass/style.scss */
-  .content .contact-left .wpcf7-form input[type="submit"] {
-    margin-left: 0px;
+  .content .contact-right .wpcf7-form input[type="submit"] {
+    margin-right: 0px;
   }
   /* line 4148, sass/style.scss */
   .content .contact-right {
@@ -4306,7 +4226,7 @@ input[type="submit"]:hover {
   }
   /* line 4176, sass/style.scss */
   .content-left .posts-navigation ul li {
-    margin-right: 2%;
+    margin-left: 2%;
   }
   /* line 4180, sass/style.scss */
   .content-left .posts-navigation ul .posts-navigation-previous {
@@ -4344,7 +4264,7 @@ input[type="submit"]:hover {
     -moz-box-sizing: border-box;
     -o-box-sizing: border-box;
     box-sizing: border-box;
-    margin-left: 0.5%;
+    margin-right: 0.5%;
   }
 
   /* line 4235, sass/style.scss */
@@ -4354,24 +4274,24 @@ input[type="submit"]:hover {
   /* line 4242, sass/style.scss */
   #comments .respond input {
     width: 32.5%;
-    margin-left: 1.2%;
+    margin-right: 1.2%;
   }
   /* line 4246, sass/style.scss */
   #comments .respond input:first-child {
-    margin-left: 0;
+    margin-right: 0;
   }
   /* line 4251, sass/style.scss */
   #comments .respond input[type="submit"] {
-    margin-left: 0px;
+    margin-right: 0px;
   }
 
   /* line 4261, sass/style.scss */
   #testimonials .testimonials-boxes .testimonials-box {
-    margin-left: 3.2%;
+    margin-right: 3.2%;
   }
   /* line 4264, sass/style.scss */
   #testimonials .testimonials-boxes .testimonials-box:first-child {
-    margin-left: 0px;
+    margin-right: 0px;
   }
   /* line 4268, sass/style.scss */
   #testimonials .testimonials-boxes .testimonials-box .testimonial-box-entry {
@@ -4386,8 +4306,8 @@ input[type="submit"]:hover {
 /* line 4280, sass/style.scss */
 .sticky {
   padding-bottom: 30px !important;
-  padding-left: 10px;
-  border-left: 10px solid #eee;
+  padding-right: 10px;
+  border-right: 10px solid #eee;
 }
 
 /* line 4286, sass/style.scss */

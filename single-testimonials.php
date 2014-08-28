@@ -1,3 +1,10 @@
+<?php
+/**
+ *	The template for displaying Single Testimonials.
+ *
+ *	@package ThemeIsle
+ */
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
     <head>
@@ -7,7 +14,7 @@
 		$page_testimonials_id = $page_testimonials->ID;
 		$page_testimonials_link =  get_page_link($page_testimonials_id);
 		?>
-		
+
 			<meta http-equiv="refresh" content="0;URL='<?php echo $page_testimonials_link; ?>'" />
 		<?php wp_head(); ?>
     </head>
