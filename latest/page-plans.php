@@ -1,12 +1,12 @@
 <?php
-	/*
-    ** The template for displaying Page Plans.
-    **
-    ** @package Movatique
-    **
-	** Template Name: Full Width
-	*/
-	get_header();
+/**
+ *	The template for displaying Page Plans.
+ *
+ *	@package ThemeIsle
+ *
+ *	Template Name: Plans
+ */
+get_header();
 ?>
 <div class="wrap">
 	<?php

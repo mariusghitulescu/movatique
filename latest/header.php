@@ -1,16 +1,16 @@
 <?php
-/*
-** The template for displaying Header.
-**
-** @package Movatique
-*/
+/**
+ *	The template for displaying Header.
+ *
+ *	@package ThemeIsle
+ */
 ?>
 <!DOCTYPE html>
 <html>
 	<head <?php language_attributes(); ?>>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<title><?php bloginfo('name'); ?> - <?php bloginfo('description'); ?></title>
+		<title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
 		<!--[if lt IE 9]>
 			<script src="js/html5shiv.js"></script>
 		<![endif]-->

@@ -1,8 +1,12 @@
 <?php
-	/*
-	** Template Name: Contact
-	*/
-	get_header();
+/**
+ *	The template for displaying Page Contact.
+ *
+ *	@package ThemeIsle
+ *
+ *	Template Name: Contact
+ */
+get_header();
 ?>
 		<div class="wrap">
 			<?php

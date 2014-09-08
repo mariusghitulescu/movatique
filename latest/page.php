@@ -1,10 +1,10 @@
 <?php
-	/*
-    ** The template for displaying Page.
-    **
-    ** @package Movatique
-    */
-	get_header();
+/**
+ *	The template for displaying Page.
+ *
+ *	@package ThemeIsle
+ */
+get_header();
 ?>
 <div class="wrap">
 	<?php

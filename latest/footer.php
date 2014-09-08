@@ -1,9 +1,9 @@
 <?php
-/*
-** The template for displaying Footer.
-**
-** @package Movatique
-*/
+/**
+ *	The template for displaying Footer.
+ *
+ *	@package ThemeIsle
+ */
 ?>
 <footer>
 	<div class="footer-one cf">

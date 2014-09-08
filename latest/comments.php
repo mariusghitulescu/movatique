@@ -1,17 +1,17 @@
 <?php
-    /*
-    ** The template for displaying Comments.
-    **
-    ** @package Movatique
-    */
-    if ( post_password_required() )
-        return;
+/**
+ *  The template for displaying Comments.
+ *
+ *  @package ThemeIsle
+ */
+if ( post_password_required() )
+    return;
 ?>
- 
-<div id="comments" class="cf" style="color: #000;">
- 
+
+<div id="casd" class="cf" style="color: #000;">
+
     <?php // You can start editing here -- including this comment! ?>
- 
+
     <?php if ( have_comments() ) : ?>
         <div class="single-subtitle">
             <h5>
@@ -21,7 +21,7 @@
                 ?>
             </h5><!--/h5-->
         </div><!--/div .single-subtitle-->
- 
+
         <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through? If so, show navigation ?>
         <nav role="navigation" id="comment-nav-above" class="site-navigation comment-navigation">
             <h1 class="assistive-text"><?php _e( 'Comment navigation', 'shape' ); ?></h1>
@@ -29,11 +29,11 @@
             <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'shape' ) ); ?></div>
         </nav><!-- #comment-nav-before .site-navigation .comment-navigation -->
         <?php endif; // check for comment navigation ?>
- 
-        <div class="comments-list cf">
+
+        <div class="sss cf">
             <?php wp_list_comments( array( 'callback' => 'comments_list' ) ); ?>
         </div><!--/div .comments-list .cf-->
- 
+
         <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through? If so, show navigation ?>
         <nav role="navigation" id="comment-nav-below" class="site-navigation comment-navigation">
             <h1 class="assistive-text"><?php _e( 'Comment navigation', 'shape' ); ?></h1>
@@ -41,9 +41,9 @@
             <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'shape' ) ); ?></div>
         </nav><!-- #comment-nav-below .site-navigation .comment-navigation -->
         <?php endif; // check for comment navigation ?>
- 
+
     <?php endif; // have_comments() ?>
- 
+
     <?php
         // If comments are closed and there are comments, let's leave a little note, shall we?
         if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
@@ -51,21 +51,21 @@
         <p class="nocomments"><?php _e( 'Comments are closed.', 'shape' ); ?></p>
     <?php endif; ?>
 
-        <?php 
+        <?php
             $commenter = wp_get_current_commenter();
             $req = get_option( 'require_name_email' );
             $aria_req = ( $req ? " aria-required='true'" : '' );
-            if($commenter['comment_author'] != '') 
+            if($commenter['comment_author'] != '')
                 $name = esc_attr($commenter['comment_author']);
-            else 
+            else
                 $name = '';
-            if($commenter['comment_author_email'] != '') 
+            if($commenter['comment_author_email'] != '')
                 $email = esc_attr($commenter['comment_author_email']);
             else
                 $email = '';
-            if($commenter['comment_author_url'] != '') 
+            if($commenter['comment_author_url'] != '')
                 $url = esc_attr($commenter['comment_author_url']);
-            else 
+            else
                 $url = '';
 
             $fields =  array(

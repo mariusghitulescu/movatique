@@ -1,10 +1,10 @@
 <?php
-	/*
-    ** The template for displaying Archive.
-    **
-    ** @package Movatique
-    */
-	get_header();
+/**
+ *	The template for displaying Archive.
+ *
+ *	@package ThemeIsle
+ */
+get_header();
 ?>
 <div class="wrap cf">
 	<div class="blog-title">
@@ -13,7 +13,7 @@
 				$category_archive = get_the_category();
 				$author_archive = get_the_author();
 				$search_archive = get_search_query();
-				
+
 				if ( is_day() ) {
 					printf( __( '%s', 'ti' ), get_the_date() );
 				} elseif ( is_month() ) {
@@ -44,7 +44,7 @@
 						</h2><!--/h2-->
 						<ul class="meta-post cf">
 							<li class="author-icon">
-								<?php the_author_posts_link(); ?> 
+								<?php the_author_posts_link(); ?>
 							</li><!--/li .author-icon-->
 							<li class="calendar-icon">
 								<?php echo the_time( get_option( 'date_format' ) ); ?>

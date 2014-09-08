@@ -1,10 +1,10 @@
 <?php
-	/*
-    ** The template for displaying Front Page.
-    **
-    ** @package Movatique
-    */
-	get_header();
+/**
+ *	The template for displaying Front Page.
+ *
+ *	@package ThemeIsle
+ */
+get_header();
 ?>
 <?php get_template_part( 'includes/subheader' ); ?>
 <section id="features-two">
@@ -118,9 +118,10 @@
 			<div id="foo4">
 
 				<?php
+					$numberofposts = get_theme_mod( 'ti_frontpage_testimonials_numberofposts' );
 					$args = array (
 					'post_type'              => 'testimonials',
-					'posts_per_page'         => '10',
+					'posts_per_page'         => $numberofposts,
 					'ignore_sticky_posts'    => true,
 				);
 
@@ -211,7 +212,7 @@
 				<?php
 				if ( get_theme_mod( 'ti_frontpage_ourclients_logo1' ) != false ) { ?>
 					<img src="<?php echo get_theme_mod( 'ti_frontpage_ourclients_logo1' ); ?>" alt="Sponsor 1" />
-				<?php } 
+				<?php }
 				?>
 
 				<?php

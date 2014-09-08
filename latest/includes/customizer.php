@@ -77,6 +77,26 @@ function lawyeria_customizer( $wp_customize ) {
 			'priority' => '6',
 		) );
 
+		/* Header - Contact Form 7 - Title */
+		$wp_customize->add_setting( 'ti_header_contactform7_title' );
+		$wp_customize->add_control( 'ti_header_contactform7_title', array(
+		    'label'    => __( 'Contact Form 7 - Title', 'ti' ),
+		    'section'  => 'movatique_header',
+		    'settings' => 'ti_header_contactform7_title',
+			'priority' => '7',
+		) );
+
+		/* Header - Contact Form 7 - Shortcode */
+		$wp_customize->add_setting( 'ti_header_contactform7_shortcode' );
+		$wp_customize->add_control( new Example_Customize_Textarea_Control( $wp_customize, 'ti_header_contactform7_shortcode', array(
+		            'label' 	=> __( 'Contact Form 7 - Shortcode', 'ti' ),
+		            'section' 	=> 'movatique_header',
+		            'settings' 	=> 'ti_header_contactform7_shortcode',
+		            'priority' 	=> '8'
+		        )
+		    )
+		);
+
     /*
     ** Front Page Customizer
     */
@@ -203,13 +223,22 @@ function lawyeria_customizer( $wp_customize ) {
 			'priority' => '12',
 		) );
 
+		/* Front Page - Testimonials - Number of posts */
+		$wp_customize->add_setting( 'ti_frontpage_testimonials_numberofposts' );
+		$wp_customize->add_control( 'ti_frontpage_testimonials_numberofposts', array(
+		    'label'    => __( 'Testimonials - Number of posts:', 'ti' ),
+		    'section'  => 'movatique_frontpage',
+		    'settings' => 'ti_frontpage_testimonials_numberofposts',
+			'priority' => '13',
+		) );
+
 		/* Front Page - Our Clients - Title */
 		$wp_customize->add_setting( 'ti_frontpage_ourclients_title' );
 		$wp_customize->add_control( 'ti_frontpage_ourclients_title', array(
 		    'label'    => __( 'Our Clients - Title:', 'ti' ),
 		    'section'  => 'movatique_frontpage',
 		    'settings' => 'ti_frontpage_ourclients_title',
-			'priority' => '13',
+			'priority' => '14',
 		) );
 
 		/* Front Page - Our Clients - Logo 1 */
@@ -218,7 +247,7 @@ function lawyeria_customizer( $wp_customize ) {
 		    'label'    => __( 'Our Clients - Logo 1:', 'ti' ),
 		    'section'  => 'movatique_frontpage',
 		    'settings' => 'ti_frontpage_ourclients_logo1',
-		    'priority' => '14',
+		    'priority' => '15',
 		) ) );
 
 		/* Front Page - Our Clients - Logo 2 */
@@ -227,7 +256,7 @@ function lawyeria_customizer( $wp_customize ) {
 		    'label'    => __( 'Our Clients - Logo 2:', 'ti' ),
 		    'section'  => 'movatique_frontpage',
 		    'settings' => 'ti_frontpage_ourclients_logo2',
-		    'priority' => '15',
+		    'priority' => '16',
 		) ) );
 
 		/* Front Page - Our Clients - Logo 3 */
@@ -377,13 +406,50 @@ function lawyeria_customizer( $wp_customize ) {
 			'priority' => '14'
 		) );
 
+	/*
+    ** 404 Customizer
+    */
+    $wp_customize->add_section( 'constructzine_404' , array(
+    	'title'       => __( '404 Page', 'ti' ),
+    	'priority'    => 400,
+	) );
+
+		/* 404 - Title */
+		$wp_customize->add_setting( 'ti_404_title' );
+		$wp_customize->add_control( 'ti_404_title', array(
+		    'label'    => __( '404 - Title:', 'ti' ),
+		    'section'  => 'constructzine_404',
+		    'settings' => 'ti_404_title',
+			'priority' => '1',
+		) );
+
+		/* 404 - Title */
+		$wp_customize->add_setting( 'ti_404_subtitle' );
+		$wp_customize->add_control( 'ti_404_subtitle', array(
+		    'label'    => __( '404 - Subtitle:', 'ti' ),
+		    'section'  => 'constructzine_404',
+		    'settings' => 'ti_404_subtitle',
+			'priority' => '2',
+		) );
+
+		/* 404 - Content */
+		$wp_customize->add_setting( 'ti_404_content' );
+		$wp_customize->add_control( new Example_Customize_Textarea_Control( $wp_customize, 'ti_404_content', array(
+		            'label' 	=> __( '404 - Content', 'ti' ),
+		            'section' 	=> 'constructzine_404',
+		            'settings' 	=> 'ti_404_content',
+		            'priority' 	=> '3'
+		        )
+		    )
+		);
+
 }
 add_action( 'customize_register', 'lawyeria_customizer' );
 
 if( class_exists( 'WP_Customize_Control' ) ):
 	class Example_Customize_Textarea_Control extends WP_Customize_Control {
 	    public $type = 'textarea';
-	 
+
 	    public function render_content() { ?>
 
 	        <label>

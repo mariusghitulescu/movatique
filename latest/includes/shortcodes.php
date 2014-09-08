@@ -1,8 +1,8 @@
 <?php
 
-/*
-** Pricing Shortcode
-*/
+/**
+ *  Pricing Shortcode
+ */
 function pricing_shortcode( $atts ) {
 
     extract( shortcode_atts(
@@ -30,9 +30,9 @@ function pricing_shortcode( $atts ) {
 }
 add_shortcode( 'pricing', 'pricing_shortcode' );
 
-/*
-** Row Shortcode
-*/
+/**
+ *  Row Shortcode
+ */
 function row_shortcode( $atts ) {
 
     extract( shortcode_atts(

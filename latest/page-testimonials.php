@@ -1,12 +1,12 @@
 <?php
-	/*
-    ** The template for displaying Page Testimonials.
-    **
-    ** @package Movatique
-    **
-	** Template Name: Testimonials
-	*/
-	get_header();
+/**
+ *	The template for displaying Page Testimonials.
+ *
+ *	@package ThemeIsle
+ *
+ *	Template Name: Testimonials
+ */
+get_header();
 ?>
 <div class="wrap">
 	<div id="testimonials">

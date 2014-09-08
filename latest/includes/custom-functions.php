@@ -1,8 +1,8 @@
 <?php
 
-/*
-** Pagination
-*/
+/**
+ *	Pagination
+ */
 function pagination() {
 
 	if( is_singular() )
@@ -72,9 +72,9 @@ function pagination() {
 
 }
 
-/*
-** Excerpt Limit Words
-*/
+/**
+ *	Excerpt Limit Words
+ */
 function excerpt_limit_words($limit) {
     $excerpt = explode(' ', get_the_excerpt(), $limit);
     if (count($excerpt)>=$limit) {
@@ -82,19 +82,14 @@ function excerpt_limit_words($limit) {
         $excerpt = implode(" ",$excerpt).'...';
     } else {
         $excerpt = implode(" ",$excerpt);
-    } 
+    }
     $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
     return $excerpt;
 }
 
-/*
-** Content Limit Words
-*/
-
-
-/*
-** Comments List
-*/
+/**
+ *	Comments List
+ */
 if ( ! function_exists( 'comments_list' ) ) :
 /**
  * Template for comments and pingbacks.
@@ -133,9 +128,9 @@ function comments_list( $comment, $args, $depth ) {
         	<div class="comments-list-meta">
         		<span><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>" title="<?php comment_time( 'c' ); ?>"><?php printf( __( '%1$s at %2$s', 'shape' ), get_comment_date(), get_comment_time() ); ?></a></span>
         		<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-        	</div><!--/div .comments-list-meta--> 
+        	</div><!--/div .comments-list-meta-->
         </article><!--/article .comments-list .cf-->
- 
+
     <?php
             break;
     endswitch;

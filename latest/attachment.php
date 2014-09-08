@@ -1,10 +1,10 @@
 <?php
-	/*
-    ** The template for displaying Attachment.
-    **
-    ** @package Movatique
-    */
-	get_header();
+/**
+ *	The template for displaying Attachment.
+ *
+ *	@package ThemeIsle
+ */
+get_header();
 ?>
 <div class="wrap">
 
