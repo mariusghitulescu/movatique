@@ -206,5 +206,3 @@ function my_post_gallery($output, $attr) {
 
     return $output;
 }
-
-?>
