@@ -255,6 +255,7 @@ header .logo {
   margin-top: 45px;
   margin-bottom: 45px;
   float: left;
+  background-zize: 100%;
 }
 /* line 178, sass/style.scss */
 header .logo img {
@@ -351,10 +352,10 @@ header nav ul li ul .page_item_has_children {
   width: 100%;
   padding: 60px 0px;
   background: url("images/subheader-background.png") no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
 }
 /* line 275, sass/style.scss */
 #subheader h3 {
